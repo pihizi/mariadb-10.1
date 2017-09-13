@@ -1,10 +1,10 @@
 #!/bin/sh
 
 echo "Installing..."
-/usr/bin/mysql_install_db --user=mysql > /dev/null 2>&1
+mysql_install_db --user=mysql > /dev/null 2>&1
 
 mkdir -p /run/mysqld && chown mysql /run/mysqld
-/usr/bin/mysqld --user=mysql --skip-networking > /dev/null 2>&1 &
+mysqld --user=mysql --skip-networking > /dev/null 2>&1 &
 
 if [ !-z $MYSQL_USER ]
 then

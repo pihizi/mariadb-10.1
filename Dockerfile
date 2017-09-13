@@ -1,8 +1,7 @@
 FROM mariadb:10.1
 MAINTAINER PiHiZi <pihizi@msn.com>
 
-RUN apt-get install -y mariadb-client \
-    && mkdir /app && echo 'export PATH="/app/bin:$PATH"'>/etc/profile.d/docker
+RUN mkdir /app && echo 'export PATH="/app/bin:$PATH"'>/etc/profile.d/docker
 ADD bin /app/bin
 
 VOLUME ["/etc/mysql", "/var/lib/mysql", "/var/log/mysql"]
